@@ -1,0 +1,38 @@
+/*
+========= feedback styles ==========
+*/
+
+.feedback-container {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.feedback-container .answer {
+	font-size: 3.5rem;
+}
+
+.feedback-container .answer .correct {
+	color: rgb(0, 255, 0);
+}
+
+.feedback-container .answer .wrong {
+	color: rgb(255, 0, 0);
+}
+
+/* .feedback .part1 {
+}
+
+.feedback .part2 {
+}
+
+.feedback .part3 {
+}
+
+.feedback .part4 {
+} */
+
+/* .hidden {
+	display: none;
+} */
