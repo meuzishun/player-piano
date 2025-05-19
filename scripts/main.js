@@ -12,21 +12,21 @@ const tonicOctave = document.querySelector('#tonic-octave');
 player.piano = new Piano(73, 24);
 
 newGestureButton.addEventListener('click', () => {
-    player.melody = new Melody();
-    player.playMelody();
+  player.melody = new Melody();
+  player.playMelody();
 });
 
 playButton.addEventListener('click', () => {
-    player.playMelody();
+  player.playMelody();
 });
 
 keyboardButton.addEventListener('click', () => {
-    keyboardButton.classList.toggle('hot');
-    if (keyboardButton.classList.contains('hot')) {
-        computerKeyboardInput.on();
-    } else {
-        computerKeyboardInput.off();
-    }
+  keyboardButton.classList.toggle('hot');
+  if (keyboardButton.classList.contains('hot')) {
+    computerKeyboardInput.on();
+  } else {
+    computerKeyboardInput.off();
+  }
 });
 
 tonicLetter.addEventListener('change', computerKeyboardInput.reset);
