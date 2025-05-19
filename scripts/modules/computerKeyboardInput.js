@@ -1,5 +1,3 @@
-// import { score } from '../modules/score.js';
-
 const pressPianoKey = function (evt) {
   if (evt.repeat) {
     return;
