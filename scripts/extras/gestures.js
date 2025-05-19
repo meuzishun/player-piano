@@ -250,7 +250,6 @@ let bar1 = zipper_arrays(bar1pitches, bar1durations, bar1bar, bar1rhythm);
 
 */
 
-
 // const majorScale = [0, 2, 4, 5, 7, 9, 11, 12];
 
 // const minorScale = [0, 2, 3, 5, 7, 8, 10, 12];
@@ -260,8 +259,6 @@ let bar1 = zipper_arrays(bar1pitches, bar1durations, bar1bar, bar1rhythm);
 // }
 
 // console.log(scaleDegree(majorScale, 3, 62));
-
-
 
 // establish major scale
 // establist ascending melodic minor scale
@@ -281,50 +278,64 @@ let bar1 = zipper_arrays(bar1pitches, bar1durations, bar1bar, bar1rhythm);
 
 // console.log(melodicMinorScale);
 
-const major = [-5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 11, 9, 7, 5, 4, 2, 0, -1, -3, -5];
-const minor = [-5, -3, -1, 0, 2, 3, 5, 7, 9, 11, 12, 10, 8, 7, 5, 3, 2, 0, -2, -4, -5];
+const major = [
+  -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 11, 9, 7, 5, 4, 2, 0, -1, -3, -5,
+];
+const minor = [
+  -5, -3, -1, 0, 2, 3, 5, 7, 9, 11, 12, 10, 8, 7, 5, 3, 2, 0, -2, -4, -5,
+];
 const nodes = [0, 3, 5, 7, 10, 13, 15, 17, 20];
 
-const passingGesture = function(environment, startingNode) {
-    return environment.slice(nodes[startingNode], nodes[startingNode + 1] + 1);
-}
+const passingGesture = function (environment, startingNode) {
+  return environment.slice(nodes[startingNode], nodes[startingNode + 1] + 1);
+};
 
-const neighboringGesture = function(environment, startingNode) {
-    return [
-        environment[nodes[startingNode + 1]], environment[nodes[startingNode + 1] - 1], environment[nodes[startingNode + 1]]
-    ];
-}
+const neighboringGesture = function (environment, startingNode) {
+  return [
+    environment[nodes[startingNode + 1]],
+    environment[nodes[startingNode + 1] - 1],
+    environment[nodes[startingNode + 1]],
+  ];
+};
 
-const arpeggiationGesture1 = function(environment, startingNode) {
-    return [
-        environment[nodes[startingNode]], environment[nodes[startingNode + 1]], environment[nodes[startingNode]]
-    ];
-}
+const arpeggiationGesture1 = function (environment, startingNode) {
+  return [
+    environment[nodes[startingNode]],
+    environment[nodes[startingNode + 1]],
+    environment[nodes[startingNode]],
+  ];
+};
 
-const arpeggiationGesture2 = function(environment, startingNode) {
-    return [
-        environment[nodes[startingNode]], environment[nodes[startingNode + 1]], environment[nodes[startingNode + 2]]
-    ];
-}
+const arpeggiationGesture2 = function (environment, startingNode) {
+  return [
+    environment[nodes[startingNode]],
+    environment[nodes[startingNode + 1]],
+    environment[nodes[startingNode + 2]],
+  ];
+};
 
-const arpeggiationGesture3 = function(environment, startingNode) {
-    return [
-        environment[nodes[startingNode]], environment[nodes[startingNode + 2]], environment[nodes[startingNode + 1]]
-    ];
-}
+const arpeggiationGesture3 = function (environment, startingNode) {
+  return [
+    environment[nodes[startingNode]],
+    environment[nodes[startingNode + 2]],
+    environment[nodes[startingNode + 1]],
+  ];
+};
 
-const appoggiaturaGesture = function(environment, startingNode) {
-    return [
-        environment[nodes[startingNode]], environment[nodes[startingNode + 1] + 1], environment[nodes[startingNode + 1]]
-    ]
-}
+const appoggiaturaGesture = function (environment, startingNode) {
+  return [
+    environment[nodes[startingNode]],
+    environment[nodes[startingNode + 1] + 1],
+    environment[nodes[startingNode + 1]],
+  ];
+};
 
 let possibleGestures = [];
 
 function populate(func, mode, num) {
-    for (let i = 0; i < num; i++) {
-        possibleGestures.push(func(mode, i));
-    }
+  for (let i = 0; i < num; i++) {
+    possibleGestures.push(func(mode, i));
+  }
 }
 
 populate(arpeggiationGesture3, major, 7);
@@ -361,9 +372,6 @@ console.log(possibleGestures);
 // possibleGestures.push(arpeggiationGesture(minor, 6));
 // possibleGestures.push(arpeggiationGesture(minor, 7));
 
-
-
-
 // function pillarPitches(scale) {
 //     let arr = [];
 //     for (let i = 0, l = scale.length; i < l; i++) {
@@ -373,8 +381,6 @@ console.log(possibleGestures);
 //     }
 //     return arr;
 // }
-
-
 
 // function passingUpperTetra(scale) {
 //     const passingUpperTetra = {
