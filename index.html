@@ -1,208 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player Piano</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/styles/global_styles.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/piano_keyboard_styles.css">
-    <link rel="stylesheet" href="/styles/piano_control_styles.css">
-    <link rel="stylesheet" href="/styles/piano_gesture_styles.css">
-    <link rel="stylesheet" href="/styles/player_data_styles.css">
-    <link rel="stylesheet" href="/styles/feedback_styles.css">
-    <link rel="stylesheet" href="/styles/loading_styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/styles/global_styles.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/piano_keyboard_styles.css" />
+    <link rel="stylesheet" href="/styles/piano_control_styles.css" />
+    <link rel="stylesheet" href="/styles/piano_gesture_styles.css" />
+    <link rel="stylesheet" href="/styles/player_data_styles.css" />
+    <link rel="stylesheet" href="/styles/feedback_styles.css" />
+    <link rel="stylesheet" href="/styles/loading_styles.css" />
     <script src="../scripts/awesome-fonts.js"></script>
     <script type="module" src="../scripts/main.js"></script>
-    <!-- <script type="module" src="../scripts/tests.js"></script> -->
-</head>
-<body>
+  </head>
+  <body>
     <div class="loading-container">
-        <h1 class="loading-message">Loading Audio...</h1>
-        <div class="loading-bar">
-            <div class="loading-bar fill"></div>
-        </div>
+      <h1 class="loading-message">Loading Audio...</h1>
+      <div class="loading-bar">
+        <div class="loading-bar fill"></div>
+      </div>
     </div>
     <div class="piano-container hidden">
-        <div class="piano-controls">
-
-            <div class="gesture-choices">
-                <div class="mode-labels">
-                    <p>Major</p>
-                    <p>Minor</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-passing" class="gesture-box" name="major-passing" value="major-passing" data-mode="major" data-gesture="passing" checked>
-                        <label for="major-passing"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-passing" class="gesture-box" name="minor-passing" value="minor-passing" data-mode="minor" data-gesture="passing">
-                        <label for="minor-passing"> </label>
-                    </div>
-                    <p>Passing</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-neighboring" class="gesture-box" name="major-neighboring" value="major-neighboring" data-mode="major" data-gesture="neighboring">
-                        <label for="major-neighboring"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-neighboring" class="gesture-box" name="minor-neighboring" value="minor-neighboring" data-mode="minor" data-gesture="neighboring">
-                        <label for="minor-neighboring"> </label>
-                    </div>
-                    <p>Neighboring</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-arpeggiation1" class="gesture-box" name="major-arpeggiation1" value="major-arpeggiation1" data-mode="major" data-gesture="arpeggiation1">
-                        <label for="major-arpeggiation1"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-arpeggiation1" class="gesture-box" name="minor-arpeggiation1" value="minor-arpeggiation1" data-mode="minor" data-gesture="arpeggiation1">
-                        <label for="minor-arpeggiation1"> </label>
-                    </div>
-                    <p>Arpeggiation 1</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-arpeggiation2" class="gesture-box" name="major-arpeggiation2" value="major-arpeggiation2" data-mode="major" data-gesture="arpeggiation2">
-                        <label for="major-arpeggiation2"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-arpeggiation2" class="gesture-box" name="minor-arpeggiation2" value="minor-arpeggiation2" data-mode="minor" data-gesture="arpeggiation2">
-                        <label for="minor-arpeggiation2"> </label>
-                    </div>
-                    <p>Arpeggiation 2</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-arpeggiation3" class="gesture-box" name="major-arpeggiation3" value="major-arpeggiation3" data-mode="major" data-gesture="arpeggiation3">
-                        <label for="major-arpeggiation3"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-arpeggiation3" class="gesture-box" name="minor-arpeggiation3" value="minor-arpeggiation3" data-mode="minor" data-gesture="arpeggiation3">
-                        <label for="minor-arpeggiation3"> </label>
-                    </div>
-                    <p>Arpeggiation 3</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-appoggiatura1" class="gesture-box" name="major-appoggiatura1" value="major-appoggiatura1" data-mode="major" data-gesture="appoggiatura1">
-                        <label for="major-appoggiatura1"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-appoggiatura1" class="gesture-box" name="minor-appoggiatura1" value="minor-appoggiatura1" data-mode="minor" data-gesture="appoggiatura1">
-                        <label for="minor-appoggiatura1"> </label>
-                    </div>
-                    <p>Appoggiatura 1</p>
-                </div>
-                <div class="gesture-choice">
-                    <div class="major-button">
-                        <input type="checkbox" id="major-appoggiatura2" class="gesture-box" name="major-appoggiatura2" value="major-appoggiatura2" data-mode="major" data-gesture="appoggiatura2">
-                        <label for="major-appoggiatura2"> </label>
-                    </div>
-                    <div class="minor-button">
-                        <input type="checkbox" id="minor-appoggiatura2" class="gesture-box" name="minor-appoggiatura2" value="minor-appoggiatura2" data-mode="minor" data-gesture="appoggiatura2">
-                        <label for="minor-appoggiatura2"> </label>
-                    </div>
-                    <p>Appoggiatura 2</p>
-                </div>
+      <div class="piano-controls">
+        <div class="gesture-choices">
+          <div class="mode-labels">
+            <p>Major</p>
+            <p>Minor</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-passing"
+                class="gesture-box"
+                name="major-passing"
+                value="major-passing"
+                data-mode="major"
+                data-gesture="passing"
+                checked
+              />
+              <label for="major-passing"> </label>
             </div>
-            <div class="player-data">
-                <div class="tonic-container">
-                    <label for="tonic" class="tonic-label">Tonic</label>
-                    <!-- <input type="number" name="tonic" class="tonic-field" min="21" max="108" value=60></input> -->
-                    <select name="tonic-letter" id="tonic-letter">
-                        <option value="9">A</option>
-                        <option value="10">A#/Bb</option>
-                        <option value="11">B</option>
-                        <option value="0" selected>C</option>
-                        <option value="1">C#/Db</option>
-                        <option value="2">D</option>
-                        <option value="3">D#/Eb</option>
-                        <option value="4">E</option>
-                        <option value="5">F</option>
-                        <option value="6">F#/Gb</option>
-                        <option value="7">G</option>
-                        <option value="8">G#/Ab</option>
-                    </select>
-                    <select name="tonic-octave" id="tonic-octave">
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4" selected>4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-                <!-- <div class="mode-container">
-                    <label for="mode">Mode</label>
-                    <select name="mode" id="mode">
-                        <option value="major" selected>Major</option>
-                        <option value="minor">Minor</option>
-                    </select>
-                </div> -->
-                <div class="meter-container">
-                    <p>Meter</p>
-                    <label for="simple-meter">
-                        <input type="radio" name="meter" id="simple-meter" value="simple" checked="checked">
-                        Simple
-                    </label>
-                    <label for="compound-meter">
-                        <input type="radio" name="meter" id="compound-meter" value="compound">
-                        Compound
-                    </label>
-                    <!-- <label for="meter">Meter</label>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-passing"
+                class="gesture-box"
+                name="minor-passing"
+                value="minor-passing"
+                data-mode="minor"
+                data-gesture="passing"
+              />
+              <label for="minor-passing"> </label>
+            </div>
+            <p>Passing</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-neighboring"
+                class="gesture-box"
+                name="major-neighboring"
+                value="major-neighboring"
+                data-mode="major"
+                data-gesture="neighboring"
+              />
+              <label for="major-neighboring"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-neighboring"
+                class="gesture-box"
+                name="minor-neighboring"
+                value="minor-neighboring"
+                data-mode="minor"
+                data-gesture="neighboring"
+              />
+              <label for="minor-neighboring"> </label>
+            </div>
+            <p>Neighboring</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-arpeggiation1"
+                class="gesture-box"
+                name="major-arpeggiation1"
+                value="major-arpeggiation1"
+                data-mode="major"
+                data-gesture="arpeggiation1"
+              />
+              <label for="major-arpeggiation1"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-arpeggiation1"
+                class="gesture-box"
+                name="minor-arpeggiation1"
+                value="minor-arpeggiation1"
+                data-mode="minor"
+                data-gesture="arpeggiation1"
+              />
+              <label for="minor-arpeggiation1"> </label>
+            </div>
+            <p>Arpeggiation 1</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-arpeggiation2"
+                class="gesture-box"
+                name="major-arpeggiation2"
+                value="major-arpeggiation2"
+                data-mode="major"
+                data-gesture="arpeggiation2"
+              />
+              <label for="major-arpeggiation2"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-arpeggiation2"
+                class="gesture-box"
+                name="minor-arpeggiation2"
+                value="minor-arpeggiation2"
+                data-mode="minor"
+                data-gesture="arpeggiation2"
+              />
+              <label for="minor-arpeggiation2"> </label>
+            </div>
+            <p>Arpeggiation 2</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-arpeggiation3"
+                class="gesture-box"
+                name="major-arpeggiation3"
+                value="major-arpeggiation3"
+                data-mode="major"
+                data-gesture="arpeggiation3"
+              />
+              <label for="major-arpeggiation3"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-arpeggiation3"
+                class="gesture-box"
+                name="minor-arpeggiation3"
+                value="minor-arpeggiation3"
+                data-mode="minor"
+                data-gesture="arpeggiation3"
+              />
+              <label for="minor-arpeggiation3"> </label>
+            </div>
+            <p>Arpeggiation 3</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-appoggiatura1"
+                class="gesture-box"
+                name="major-appoggiatura1"
+                value="major-appoggiatura1"
+                data-mode="major"
+                data-gesture="appoggiatura1"
+              />
+              <label for="major-appoggiatura1"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-appoggiatura1"
+                class="gesture-box"
+                name="minor-appoggiatura1"
+                value="minor-appoggiatura1"
+                data-mode="minor"
+                data-gesture="appoggiatura1"
+              />
+              <label for="minor-appoggiatura1"> </label>
+            </div>
+            <p>Appoggiatura 1</p>
+          </div>
+          <div class="gesture-choice">
+            <div class="major-button">
+              <input
+                type="checkbox"
+                id="major-appoggiatura2"
+                class="gesture-box"
+                name="major-appoggiatura2"
+                value="major-appoggiatura2"
+                data-mode="major"
+                data-gesture="appoggiatura2"
+              />
+              <label for="major-appoggiatura2"> </label>
+            </div>
+            <div class="minor-button">
+              <input
+                type="checkbox"
+                id="minor-appoggiatura2"
+                class="gesture-box"
+                name="minor-appoggiatura2"
+                value="minor-appoggiatura2"
+                data-mode="minor"
+                data-gesture="appoggiatura2"
+              />
+              <label for="minor-appoggiatura2"> </label>
+            </div>
+            <p>Appoggiatura 2</p>
+          </div>
+        </div>
+        <div class="player-data">
+          <div class="tonic-container">
+            <label for="tonic" class="tonic-label">Tonic</label>
+            <select name="tonic-letter" id="tonic-letter">
+              <option value="9">A</option>
+              <option value="10">A#/Bb</option>
+              <option value="11">B</option>
+              <option value="0" selected>C</option>
+              <option value="1">C#/Db</option>
+              <option value="2">D</option>
+              <option value="3">D#/Eb</option>
+              <option value="4">E</option>
+              <option value="5">F</option>
+              <option value="6">F#/Gb</option>
+              <option value="7">G</option>
+              <option value="8">G#/Ab</option>
+            </select>
+            <select name="tonic-octave" id="tonic-octave">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <!-- <div class="mode-container">
+            <label for="mode">Mode</label>
+            <select name="mode" id="mode">
+              <option value="major" selected>Major</option>
+              <option value="minor">Minor</option>
+            </select>
+          </div> -->
+          <div class="meter-container">
+            <p>Meter</p>
+            <label for="simple-meter">
+              <input
+                type="radio"
+                name="meter"
+                id="simple-meter"
+                value="simple"
+                checked="checked"
+              />
+              Simple
+            </label>
+            <label for="compound-meter">
+              <input
+                type="radio"
+                name="meter"
+                id="compound-meter"
+                value="compound"
+              />
+              Compound
+            </label>
+            <!-- <label for="meter">Meter</label>
                     <select name="meter" id="meter">
                         <option value="simple" selected>Simple</option>
                         <option value="compound">Compound</option>
                     </select> -->
-                </div>
-                <div class="gesture-num-container">
-                    <label for="gesture-num" class="gesture-num-label">Number of gestures</label>
-                    <input type="number" name="gesture-num" id="gesture-num" min="1" value="1">
-                </div>
-                <div class="matched-ends-container">  <!-- TODO: Give more options for choices... matched ends is one.  What about matched starts?  No repeats? -->
-                    <input type="checkbox" name="matched-ends" id="matched-checkbox">
-                    <label for="matched-ends" class="matched-ends-label">Matched Ends</label>
-                </div>
-                <div class="glued-container"> <!-- TODO: Should only be accessible if dropdown above has matched-ends selected -->
-                    <input type="checkbox" name="glued" id="glued-checkbox">
-                    <label for="glued" class="glued-label">Glued</label>
-                </div>
-                <div class="show-answer-container">
-                    <input type="checkbox" name="show-answer" id="show-answer-checkbox">
-                    <label for="show-answer" class="show-answer-label">Show Answer</label>
-                </div>
-            </div>
-            <div class="other-data">
-                <!-- <label for="settings">Settings</label>
-                <button name="settings" class="settings-btn"><i class="fas fa-bars"></i></button> -->
-                <!-- <label for="keyboard">Keyboard</label> -->
-                <button name="keyboard" class="keyboard-btn"><i class="far fa-keyboard"></i></button>
-            </div>
-            <div class="transport-container">
-                <div class="tempo-container">
-                    <label for="tempo" class="tempo-label">Tempo:</label>
-                    <input type="number" name="tempo" id="tempo-field" min="40" max="208" value="72">
-                </div>
-                <!-- <label for="play">Play</label> -->
-                <div class="navigation">
-                    <button name="play" class="play-btn"><i class="far fa-play-circle"></i></button>
-                    <button name="newGesture" class="newGesture-btn"><i class="fas fa-step-forward"></i></button>
-                    <!-- <label for="record">Record</label> -->
-                    <!-- <button name="record" class="record-btn"><i class="fas fa-circle"></i></button> -->
-                </div>
-            </div>
-            <div class="power-controls">
-                <!-- <label for="power">Power</label> -->
-                <button name="power" class="power-btn"><i class="fa fa-power-off"></i></button>
-                <!-- <label for="volume">Volume</label> -->
-                <input type="range" min="0" max="100" value="100" class="volume-slider">
-            </div>
+          </div>
+          <div class="gesture-num-container">
+            <label for="gesture-num" class="gesture-num-label"
+              >Number of gestures</label
+            >
+            <input
+              type="number"
+              name="gesture-num"
+              id="gesture-num"
+              min="1"
+              value="1"
+            />
+          </div>
+          <div class="matched-ends-container">
+            <!-- TODO: Give more options for choices... matched ends is one.  What about matched starts?  No repeats? -->
+            <input type="checkbox" name="matched-ends" id="matched-checkbox" />
+            <label for="matched-ends" class="matched-ends-label"
+              >Matched Ends</label
+            >
+          </div>
+          <div class="glued-container">
+            <!-- TODO: Should only be accessible if dropdown above has matched-ends selected -->
+            <input type="checkbox" name="glued" id="glued-checkbox" />
+            <label for="glued" class="glued-label">Glued</label>
+          </div>
+          <div class="show-answer-container">
+            <input
+              type="checkbox"
+              name="show-answer"
+              id="show-answer-checkbox"
+            />
+            <label for="show-answer" class="show-answer-label"
+              >Show Answer</label
+            >
+          </div>
         </div>
-        <div class="keyboard-container"></div>
+        <div class="other-data">
+          <!-- <label for="settings">Settings</label>
+                <button name="settings" class="settings-btn"><i class="fas fa-bars"></i></button> -->
+          <!-- <label for="keyboard">Keyboard</label> -->
+          <button name="keyboard" class="keyboard-btn">
+            <i class="far fa-keyboard"></i>
+          </button>
+        </div>
+        <div class="transport-container">
+          <div class="tempo-container">
+            <label for="tempo" class="tempo-label">Tempo:</label>
+            <input
+              type="number"
+              name="tempo"
+              id="tempo-field"
+              min="40"
+              max="208"
+              value="72"
+            />
+          </div>
+          <!-- <label for="play">Play</label> -->
+          <div class="navigation">
+            <button name="play" class="play-btn">
+              <i class="far fa-play-circle"></i>
+            </button>
+            <button name="newGesture" class="newGesture-btn">
+              <i class="fas fa-step-forward"></i>
+            </button>
+            <!-- <label for="record">Record</label> -->
+            <!-- <button name="record" class="record-btn"><i class="fas fa-circle"></i></button> -->
+          </div>
+        </div>
+        <div class="power-controls">
+          <!-- <label for="power">Power</label> -->
+          <button name="power" class="power-btn">
+            <i class="fa fa-power-off"></i>
+          </button>
+          <!-- <label for="volume">Volume</label> -->
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            class="volume-slider"
+          />
+        </div>
+      </div>
+      <div class="keyboard-container"></div>
     </div>
     <!-- <div class="feedback-container">
         <div class="answer answer-1 hidden">
@@ -238,5 +401,5 @@
             </div>
         </div>
     </div> -->
-</body>
+  </body>
 </html>
