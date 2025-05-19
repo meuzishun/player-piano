@@ -5,15 +5,14 @@ Piano styles
 */
 
 .piano-container {
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-	background-color: var(--piano_color);
-	border-radius: 5px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: stretch;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--piano_color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
 
 /* tests */
-

@@ -5,62 +5,62 @@
 */
 
 div.gesture-choices {
-	grid-column: 1 / 3;
-	grid-row: 1 / 5;
-	display: grid;
-	grid-template-columns: 1fr 1fr 2fr;
-	grid-template-rows: repeat(8, 1fr);
-	grid-gap: 0.5em;
+  grid-column: 1 / 3;
+  grid-row: 1 / 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 0.5em;
 }
 
 div.mode-labels {
-	grid-column: 1 / 3;
-	grid-row: 1 / 2;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
-	grid-gap: 0.5em;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0.5em;
 }
 
 div.mode-labels p {
-	text-align: center;
+  text-align: center;
 }
 
 div.gesture-choice {
-	grid-column: 1 / 4;
-	display: grid;
-	grid-template-columns: 1fr 1fr 2fr;
-	grid-template-rows: 1fr;
-	grid-gap: 0.5em;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0.5em;
 }
 
 div.gesture-choice p {
-	align-self: center;
+  align-self: center;
 }
 
 div.gesture-choice input[type='checkbox'] {
-	cursor: pointer;
-    opacity: 0;
-	position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
 }
 
 div.gesture-choice label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 div.gesture-choice label::before {
-	content: '';
-	width: 100%;
-	height: 100%;
-	display: inline-block;
-	background-color: var(--button-off);
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: var(--button-off);
 }
 
 div.gesture-choice input[type='checkbox']:checked + label::before {
-	background-color: var(--blue-button-lit);
-	box-shadow: 0 0 5px var(--blue-button-lit);
+  background-color: var(--blue-button-lit);
+  box-shadow: 0 0 5px var(--blue-button-lit);
 }
 
 div.gesture-choice input[type='checkbox'] label::before {
-	background-color: var(--button-off);
+  background-color: var(--button-off);
 }

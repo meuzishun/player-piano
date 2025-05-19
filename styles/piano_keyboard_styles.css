@@ -3,75 +3,74 @@
 */
 
 .keyboard-container {
-	width: var(--piano_width);
-	height: calc(var(--piano_width) / var(--num_of_keyContainers) * 5);
-	margin: 20px;
-	display: flex;
-	flex-direction: row;
-	align-items: stretch;
+  width: var(--piano_width);
+  height: calc(var(--piano_width) / var(--num_of_keyContainers) * 5);
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .key-pair-container {
-	flex: 1;
-	position: relative;
+  flex: 1;
+  position: relative;
 }
 
 .key {
-	border-radius: 0em 0em 0.1em 0.1em;
-	user-select: none;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
+  border-radius: 0em 0em 0.1em 0.1em;
+  user-select: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 /* for text inside keys (labels) */
 .key * {
-	display: inline-block;
+  display: inline-block;
 }
 
 .key:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 div.white-key {
-	border: 1px solid black;
-	background: radial-gradient(rgb(255, 255, 255), rgb(228, 232, 238));
-	height: 100%;
-	width: 100%;
-	font-size: 0.9em;
-	transition: height 75ms ease-in-out;
-	color: black;
+  border: 1px solid black;
+  background: radial-gradient(rgb(255, 255, 255), rgb(228, 232, 238));
+  height: 100%;
+  width: 100%;
+  font-size: 0.9em;
+  transition: height 75ms ease-in-out;
+  color: black;
 }
 
 div.white-key-pressed {
-	height: 102%;
-	/* height: 99%; */
-	background: radial-gradient(rgb(228, 228, 228), rgb(207, 211, 220));
+  height: 102%;
+  /* height: 99%; */
+  background: radial-gradient(rgb(228, 228, 228), rgb(207, 211, 220));
 }
 
 .black-key {
-	background: radial-gradient(rgb(118, 118, 118), rgb(52, 52, 52));
-	border-left: 3px solid black;
-	border-bottom: 5px solid black;
-	border-right: 3px solid black;
-	height: 66%;
-	width: 50%;
-	position: absolute;
-	top: 0;
-	left: 75%;
-	z-index: 1;
-	font-size: 0.7em;
-	transition: height 75ms ease-in-out;
-	color: white;
-	position: absolute;
-	/* display: flex;
+  background: radial-gradient(rgb(118, 118, 118), rgb(52, 52, 52));
+  border-left: 3px solid black;
+  border-bottom: 5px solid black;
+  border-right: 3px solid black;
+  height: 66%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 75%;
+  z-index: 1;
+  font-size: 0.7em;
+  transition: height 75ms ease-in-out;
+  color: white;
+  position: absolute;
+  /* display: flex;
 	align-items: flex-start;
 	justify-content: center; */
 }
 
 .black-key-pressed {
-	height: 68%;
-	/* height: 64%; */
-	background: radial-gradient(rgb(48, 48, 48), rgb(36, 36, 36));
+  height: 68%;
+  /* height: 64%; */
+  background: radial-gradient(rgb(48, 48, 48), rgb(36, 36, 36));
 }
-
