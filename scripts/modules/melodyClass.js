@@ -1,6 +1,7 @@
 // The melody takes the score, the composer's chosen gestures, and the 'Glued' setting and creates a sequence of Notes with absolute MIDI pitch numbers and durations in beats
-import { composer } from '../modules/composer.js'; // The composer looks at the gestures selected, the number of gestures needed, and whether or not they should match ends
-import { score } from '../modules/score.js'; // The score looks at the tonic selected and the meter selected and saves the settings for other modules
+
+import { composer } from '../modules/composer.js';
+import { score } from '../modules/score.js';
 import { Note } from '../modules/noteClass.js';
 import { durationSequences } from '../modules/sequences.js';
 
