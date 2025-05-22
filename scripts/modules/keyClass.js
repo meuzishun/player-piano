@@ -1,4 +1,5 @@
 import { Tone } from '../modules/toneClass.js';
+import { events } from '../modules/events.js';
 
 class Key {
   constructor(midi, piano) {
@@ -51,11 +52,13 @@ class Key {
   pressedKey(startTime) {
     this.playPitch(startTime);
     this.pressedColor();
+    events.emit('keyPressed', this.midi);
   }
 
   liftedKey(stopTime) {
     this.silencePitch(stopTime);
     this.liftedColor();
+    events.emit('keyLifted', this.midi);
   }
 
   pressedColor() {
