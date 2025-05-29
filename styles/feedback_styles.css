@@ -6,7 +6,8 @@
   grid-column: 2 / 3;
   grid-row: 4 / 5;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .feedback-container .answer {
@@ -14,11 +15,11 @@
 }
 
 .feedback-container .answer .correct {
-  color: rgb(0, 255, 0);
+  color: rgb(0, 137, 0);
 }
 
 .feedback-container .answer .wrong {
-  color: rgb(255, 0, 0);
+  color: rgb(155, 10, 0);
 }
 
 /* .feedback .part1 {
