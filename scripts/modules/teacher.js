@@ -1,4 +1,5 @@
 import { events } from './events.js';
+import { player } from './player.js';
 
 let question = [];
 let answer = [];
@@ -41,6 +42,16 @@ function addToAnswer(midi) {
     correctDiv.appendChild(correctIcon);
     answerDiv.appendChild(correctDiv);
   } else {
+    const correctKey = player.piano.keys[question[position]];
+
+    const handleLift = function () {
+      correctKey.silencePitch();
+      events.off('keyLifted', handleLift);
+    };
+
+    events.on('keyLifted', handleLift);
+    correctKey.playPitch();
+
     const wrongDiv = document.createElement('div');
     wrongDiv.classList.add('wrong');
 
