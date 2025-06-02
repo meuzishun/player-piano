@@ -5,7 +5,7 @@ class Key {
   constructor(midi, piano) {
     this.midi = midi;
     this.piano = piano;
-    this.filePath = `../audio/${this.midi}.mp3`;
+    this.filePath = `audio/${this.midi}.mp3`;
     this.setPitchClass();
     this.setKeyColor();
     this.loadSample();
